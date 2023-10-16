@@ -1,32 +1,32 @@
 {
-    "myBudget": [
-        {
-            "title": "Eat Out",
-            "budget": 125
-        },
-        {
-            "title": "Rent",
-            "budget": 400
-        },
-        {
-            "title": "Grocery",
-            "budget": 110
-        },
-        {
-            "title": "Movies",
-            "budget": 80
-        },
-        {
-            "title": "Electricity",
-            "budget": 70
-        },
-        {
-            "title": "Gas",
-            "budget": 60
-        },
-        {
-            "title": "Misc",
-            "budget": 100
-        }
-    ]
+  "myBudget": [
+    {
+      "title": "Eat Out",
+      "budget": 125
+    },
+    {
+      "title": "Rent",
+      "budget": 400
+    },
+    {
+      "title": "Grocery",
+      "budget": 110
+    },
+    {
+      "title": "Movies",
+      "budget": 80
+    },
+    {
+      "title": "Electricity",
+      "budget": 70
+    },
+    {
+      "title": "Gas",
+      "budget": 60
+    },
+    {
+      "title": "Misc",
+      "budget": 100
+    }
+  ]
 }

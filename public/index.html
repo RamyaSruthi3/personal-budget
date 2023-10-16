@@ -149,31 +149,6 @@
         return d.data.label;
       };
 
-      var color = d3.scale
-        .ordinal()
-        .domain([
-          "Lorem ipsum",
-          "dolor sit",
-          "amet",
-          "consectetur",
-          "adipisicing",
-          "elit",
-          "sed",
-          "do",
-          "eiusmod",
-          "tempor",
-          "incididunt",
-        ])
-        .range([
-          "#98abc5",
-          "#8a89a6",
-          "#7b6888",
-          "#6b486b",
-          "#a05d56",
-          "#d0743c",
-          "#ff8c00",
-        ]);
-
       d3.json("/budget", function (error, data) {
         if (error) {
           console.error("Error reading data from /budget:", error);
@@ -184,6 +159,7 @@
           return {
             label: item.title,
             value: item.budget,
+            color: item.color,
           };
         });
 
@@ -204,7 +180,7 @@
           .enter()
           .insert("path")
           .style("fill", function (d) {
-            return color(d.data.label);
+            return d.data.color;
           })
           .attr("class", "slice");
 
@@ -302,15 +278,7 @@
         datasets: [
           {
             data: [],
-            backgroundColor: [
-              "#ffcd56",
-              "#ff6384",
-              "#36a2eb",
-              "#fd6b19",
-              "pink",
-              "lavender",
-              "beige",
-            ],
+            backgroundColor: [],
           },
         ],
         labels: [],
@@ -322,6 +290,8 @@
           for (let i = 0; i < res.data.myBudget.length; i++) {
             dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
             dataSource.labels[i] = res.data.myBudget[i].title;
+            dataSource.datasets[0].backgroundColor[i] =
+              res.data.myBudget[i].color; // adding this line
           }
           createChart();
         });
