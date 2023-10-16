@@ -6,12 +6,12 @@ const cors = require('cors');
 
 const port = process.env.PORT || 3000;
 
-app.use(cors());  // set CORS middleware first
+app.use(cors());
 app.use(express.json());
 app.use('/', express.static('public'));
 
 // MongoDB connection using Mongoose
-const mongoDBURL = process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/pbdb'; // use environment variable
+const mongoDBURL = process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/pbdb';
 mongoose.connect(mongoDBURL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
