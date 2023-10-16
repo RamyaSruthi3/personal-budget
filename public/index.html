@@ -291,7 +291,7 @@
             dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
             dataSource.labels[i] = res.data.myBudget[i].title;
             dataSource.datasets[0].backgroundColor[i] =
-              res.data.myBudget[i].color; // adding this line
+              res.data.myBudget[i].color;
           }
           createChart();
         });
